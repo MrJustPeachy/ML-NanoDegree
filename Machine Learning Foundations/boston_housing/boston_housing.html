@@ -13686,7 +13686,7 @@ ootTAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> At a maximum depth of 1 the model is suffering from high bias. Since there are little examples to learn from the model is going to be very biased to what it knows, and because it has little to go off of there is going to be bias towards the few examples it has been given. This is shown by the validation score being so low as it's a different set of data it's going to have a low score in a high bias model.</p>
+<p><strong>Answer: </strong> At a maximum depth of 1 the model is suffering from high bias. Since there are little examples to learn from the model is going to be very biased to what it knows, and because it has little to go off of there is going to be bias towards the few examples it has been given. This is shown by the validation score being low as it's a different set of data it's going to have a low score in a high bias model. Another reason why this is bias is that the training score is also low, showing there isn't enough complexity to get the training or validation score high enough to be useful. They're both low because so few features prevents an patterns from being seen.</p>
 <p>At a maximum depth of 10 the model begins to suffer from overfitting. It has too much data at this point and can't improve the accuracy any more. This is shown by the training score being 1.0, yet the validation still lacking behind at .75. Overfitting (high variance) causes the training score to be very high, yet lower in the validation.</p>
 
 </div>
@@ -13759,7 +13759,7 @@ ootTAAAAAElFTkSuQmCC
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> The k-fold training technique splits the dataset into k containers. One of the containers will be testing data and the k-1 bins will be for training. It goes through this process k times and averages the test results providing better accuracy. If there was no cross-validated data set it might just split the data into big chunks that aren't randomized, possibly throwing off the data.</p>
+<p><strong>Answer: </strong> The k-fold training technique splits the dataset into k containers. One of the containers will be testing data and the k-1 bins will be for training. It goes through this process k times and averages the test results providing better accuracy. If there was no cross-validated data set it might just split the data into big chunks that aren't randomized, causing skewed results. The results will be thrown off because without an iterative split in the data the algorithm will already 'know' what the test data is and will give a misleading error rate. It helps to maximize the ratio of testing to training data which is useful for small data sets so there are maximum amounts of training with minimal amounts of data, lowering bias more than a very small, static testing and training split. The higher k is, variance will lower since it's less likely to overfit on smaller examples. If we had a few splits then there is likely to be a good error score because there is less patterns that are likely to show up causing bias. Simply, it's beneficial to optimize the dataset to get the most testing out of the data available.</p>
 
 </div>
 </div>
